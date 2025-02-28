@@ -42,7 +42,7 @@ def update_data_file(chunk, cols):
         if chunk is not None:
             i, j = chunk
             # Map (i,j) to linear index: index = i * cols + j
-            index = i * (cols-1) + j
+            index = i * cols + j
             
             # Load current data
             with open('data.txt', 'r') as f:
