@@ -24,7 +24,7 @@ def find_most_changed_chunk(gray1, gray2, grid_points):
             masked_img = cv2.bitwise_and(diff, mask)
             change_value = np.sum(masked_img > 50)/all
             
-            if change_value > 1.0e-4 and change_value > max_change:
+            if change_value > 1.0e-4 and change_value > max_change and max_change - change_value > 1.0e-4:
                 max_change = change_value
                 max_chunk = (i, j)
                 
